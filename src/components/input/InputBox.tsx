@@ -7,6 +7,7 @@ interface InputBoxProps {
         min: string;
         sec: string;
     };
+    startTimer: boolean;
     setTime: React.Dispatch<React.SetStateAction<{
         hour: string;
         min: string;
@@ -14,7 +15,7 @@ interface InputBoxProps {
     }>>;
 }
 
-export default function InputBox({ time, setTime }: InputBoxProps) {
+export default function InputBox({ time, setTime, startTimer }: InputBoxProps) {
     const hourInput = (e: ChangeEvent<HTMLInputElement>) => {
         if (time.hour.length < 2) {
             setTime((prev) => ({ ...prev, hour: e.target.value }))
@@ -54,7 +55,7 @@ export default function InputBox({ time, setTime }: InputBoxProps) {
     }
 
     return (
-        <div className='flex items-center justify-center w-full gap-4 py-8 h-fit'>
+        <div className={`flex items-center justify-center w-full gap-4 py-8 h-fit ${startTimer && 'pointer-events-none'}`}>
             <div className='flex flex-col items-center justify-center'>
                 <label htmlFor="hour" className='text-[25px]'>HH</label>
                 <input

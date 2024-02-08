@@ -60,4 +60,4 @@ You can learn more in the
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-live site url https://65c515ddc27d1c41dc633248--chic-paletas-be327d.netlify.app/
+live site url https://voluble-chaja-2c409d.netlify.app/

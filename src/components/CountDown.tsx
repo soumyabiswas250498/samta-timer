@@ -76,7 +76,7 @@ export default function CountDown() {
             <div className='flex items-center justify-center w-full'>
                 <GoStopwatch className={`text-[50px] ${startTimer && 'text-red-500'}`} />
             </div>
-            <InputBox time={time} setTime={setTime} />
+            <InputBox time={time} setTime={setTime} startTimer={startTimer} />
             <Button setStartTimer={setStartTimer} startTimer={startTimer} ready={ready} />
             <div className='flex items-center justify-center w-full py-8 h-11'>
                 <p className='text-red-500'>{error}</p>
