@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from 'react';
-import { GoStopwatch } from "react-icons/go";
+
 
 interface InputBoxProps {
     time: {
@@ -25,7 +25,6 @@ export default function InputBox({ time, setTime }: InputBoxProps) {
     }
     const minInput = (e: ChangeEvent<HTMLInputElement>) => {
         let num = e.target.value;
-        console.log(num)
         if (parseInt(num) < 60) {
             if (time.min.length < 2) {
                 setTime((prev) => ({ ...prev, min: e.target.value }))
@@ -40,7 +39,7 @@ export default function InputBox({ time, setTime }: InputBoxProps) {
     }
     const secInput = (e: ChangeEvent<HTMLInputElement>) => {
         let num = e.target.value;
-        console.log(num)
+
         if (parseInt(num) < 60) {
             if (time.sec.length < 2) {
                 setTime((prev) => ({ ...prev, sec: e.target.value }))
@@ -53,43 +52,53 @@ export default function InputBox({ time, setTime }: InputBoxProps) {
         }
 
     }
-    // console.log(time)
+
     return (
         <div className='flex items-center justify-center w-full gap-4 py-8 h-fit'>
-            <input
-                type="number"
-                min={0}
-                id='hour'
-                className='w-[50px] h-16 text-gray-500 rounded-md text-[32px] px-2 customInput'
-                onChange={hourInput}
-                value={time.hour}
-                onFocus={() => {
-                    setTime((prev) => ({ ...prev, hour: '' }))
-                }}
-            />
-            <input
-                type="number"
-                min={0}
-                id='min'
-                className='w-[50px] h-16 text-gray-500 rounded-md text-[32px] px-2 customInput'
-                onChange={minInput}
-                placeholder='00'
-                value={time.min}
-                onFocus={() => {
-                    setTime((prev) => ({ ...prev, min: '' }))
-                }} />
-            <input
-                type="number"
-                min={0}
-                id='sec'
-                className='w-[50px] h-16 text-gray-500 rounded-md text-[32px] px-2 customInput'
-                value={time.sec}
-                onChange={secInput}
-                placeholder='00'
-                onFocus={() => {
-                    setTime((prev) => ({ ...prev, sec: '' }))
-                }}
-            />
+            <div className='flex flex-col items-center justify-center'>
+                <label htmlFor="hour" className='text-[25px]'>HH</label>
+                <input
+                    type="number"
+                    min={0}
+                    id='hour'
+                    className='w-[50px] h-16 text-gray-500 rounded-md text-[32px] px-2 customInput'
+                    onChange={hourInput}
+                    value={time.hour}
+                    onFocus={() => {
+                        setTime((prev) => ({ ...prev, hour: '' }))
+                    }}
+                />
+            </div>
+            <div className='flex flex-col items-center justify-center'>
+                <label htmlFor="min" className='text-[25px]'>MM</label>
+                <input
+                    type="number"
+                    min={0}
+                    id='min'
+                    className='w-[50px] h-16 text-gray-500 rounded-md text-[32px] px-2 customInput'
+                    onChange={minInput}
+                    placeholder='00'
+                    value={time.min}
+                    onFocus={() => {
+                        setTime((prev) => ({ ...prev, min: '' }))
+                    }} />
+            </div>
+            <div className='flex flex-col items-center justify-center'>
+                <label htmlFor="sec" className='text-[25px]'>SS</label>
+                <input
+                    type="number"
+                    min={0}
+                    id='sec'
+                    className='w-[50px] h-16 text-gray-500 rounded-md text-[32px] px-2 customInput'
+                    value={time.sec}
+                    onChange={secInput}
+                    placeholder='00'
+                    onFocus={() => {
+                        setTime((prev) => ({ ...prev, sec: '' }))
+                    }}
+                />
+            </div>
+
         </div>
     )
 }

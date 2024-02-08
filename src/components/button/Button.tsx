@@ -6,7 +6,7 @@ export default function Button(props: any) {
     const { startTimer, setStartTimer, ready } = props;
 
     return (
-        <div className='flex items-center justify-center w-full py-8 h-fit'>
+        <div className='flex items-center justify-center w-full py-2 h-fit'>
             {
                 ready ?
                     startTimer ? <div className='flex items-center justify-center w-12 h-12 bg-red-600 rounded-md cursor-pointer' onClick={() => setStartTimer(false)}>
