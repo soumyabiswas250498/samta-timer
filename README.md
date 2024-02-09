@@ -60,4 +60,4 @@ You can learn more in the
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-live site url https://voluble-chaja-2c409d.netlify.app/
+live site url https://countdown-timer-soumya.vercel.app/
